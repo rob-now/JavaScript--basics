@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<form id="myForm">
+    <label for="formAge">Wpisz wiek</label>
+    <input type="text" id="formAge" name="age">
+    <button type="submit">Sprawdź</button>
+</form>
+
+<script>
+
+    //podpinamy się pod wysyłanie formularza
+    document.querySelector('#myForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        //pobieramy wartość pola #formAge
+        const age = document.querySelector('#formAge').value;
+        console.log ("Wartość age: " + age + ". Typ zmiennej age: " + typeof(age));
+        //w zmiennej age jest tekst wpisany w formularz.
+        //zamień go na liczbę i sprawdź czy po zamianie masz liczbę czy nie liczbę
+        //jeżeli liczba jest większa lub równa 18, wypisz w konsoli
+        //"wszystko ok", w przeciwnym razie wypisz "niestety, dostęp zablokowany"
+
+        const ageNum = parseInt(age, 10);
+        console.log ("Wartość ageNum: " + ageNum + ". Typ zmiennej ageNum: " + typeof(ageNum));
+        //Operator warunkowy zamiast pętli if
+        (!isNaN(ageNum) && ageNum >= 18)? console.log("Wszystko OK") : console.log("Dostęp zablokowany");
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
