@@ -7,7 +7,7 @@ Gwiazdki powinny być w jednej linii.
 
 var str = "";
 
-for (var i = 0; i < 6; i++) {
+for (var x = 0; x < 6; x++) {
     str += "*";
 }
 
@@ -142,7 +142,7 @@ str5 += "║  " + text2 + "  ║\n";
 //dół
 str5 += "╚";
 
-for (var m = 0; m < text2Length; m++) {
+for (var n = 0; n < text2Length; n++) {
     str5 += "═";
 }
 str5 += "╝\n";
