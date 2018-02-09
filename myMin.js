@@ -1,8 +1,8 @@
-//Funkcja sprawdzająca, która liczba z podanego zakresu jest największa.
+//Funkcja sprawdzająca, która liczba z podanego zakresu jest najmniejsza.
 
-//W konsoli podaję też wynik za pomocą Math.max() dla porównania
+//W konsoli podaję też wynik za pomocą Math.min() dla porównania
 
-function myMax() {
+function myMin() {
     var arr = Array.from(arguments);
     var result = arr[0];
     console.log("Input: " + arr + "\n\n---myMin---");
@@ -16,7 +16,7 @@ function myMax() {
 
         }
         else {
-            result = (result > arr[i]) ? result : arr[i];
+            result = (result < arr[i]) ? result : arr[i];
         }
 
         console.log("Loop " + (i+1) + "; result: " + result);
@@ -25,10 +25,11 @@ function myMax() {
 
 }
 
-myMax(-100,-10,0,8,-8,-2,5,10,-5,"15",11,23,7,-65,0);
+myMin(5,-0,-2,10,-6,8,"-11",80,99,-0.5,9);
 
-console.log("\n---Math.max:---\n" + Math.max(-100,-10,0,8,-8,-2,5,10,-5,"15",11,23,7,-65,0));
+console.log("\n---Math.min:---\n" + Math.min(5,-0,-2,10,-6,8,"-11",80,99,-0.5,9));
 
 
 //2,"a",8,-1,2,0.5,"b",-9,3,"c",10,9,4.58765,6,"5a"
 //-0,-2,10,-6,8,"-11",80,99,-0.5,9
+//-100,-10,0,8,-8,-2,5,10,-5,"15",11,23,7,-65,0
