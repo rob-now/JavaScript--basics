@@ -1,27 +1,30 @@
 function myMax() {
     var arr = Array.from(arguments);
-    var notNumbers = [];
-    var result = 0;
-    console.log("Input: " + arr);
+    var result = arr[0];
+    console.log("Input: " + arr + "\n\n---myMax---");
 
     for (var i = 0; i < arr.length; i++) {
-        //Warunek sprawdzający czy wartość jest liczbą
-        if (typeof(arr[i]) !== "number") {
-            //Trzymam wartości nie będące liczbami w osobnej zmiennej
-            notNumbers.push(arr[i]);
-            //Usuwam z arr wartości nie będące liczbami
-            arr.splice(i, 1);
-            //Cofam się w pętli o 1, gdy 1 element z tablicy zostanie usunięty
-            i--;
-        }
+        //Warunek w przypadku, gdy wartość w tablicy to NaN;
+        //przerywam wykonywanie funkcji
+        if (isNaN(arr[i])) {
+            console.log("\nFinal result: " + NaN);
+            return NaN;
 
+        }
         else {
             result = (result > arr[i]) ? result : arr[i];
         }
 
+        console.log("Loop " + (i+1) + "; result: " + result);
     }
-    console.log("\nNot numbers, correct them, please: " + notNumbers);
-    console.log("\nMaximum number is: " + result);
+    console.log("\nFinal result: " + result);
+
 }
 
-myMax (2,"a",8,1,2,0.5,"b",9,3,"c",10,9,4.58765,6,"5a");
+myMax(-100,-10,0,8,-8,-2,5,10,-5,"15",11,23,7,-65,0);
+
+console.log("\n---Math.max:---\n" + Math.max(-100,-10,0,8,-8,-2,5,10,-5,"15",11,23,7,-65,0));
+
+
+//2,"a",8,-1,2,0.5,"b",-9,3,"c",10,9,4.58765,6,"5a"
+//-0,-2,10,-6,8,"-11",80,99,-0.5,9
