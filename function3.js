@@ -6,30 +6,24 @@ input -> Ala ma kota
 output -> AlA Ma kOtA
  */
 
-function mixedUpperCase (str2) {
-    for (var b = 0; b < str2.length; b += 2) {
-        console.log(str2.charAt(b-1));
-        console.log(str2.charAt(b));
+function mixedUpperCase (str) {
+    var arrIn = str.split(""); // Tworzę tablicę z str
+    var arrOut = [];
+    var newStr;
 
+    for (var i = 0; i < arrIn.length; i++) {
+        // Sprawdzam czy index jest parzysty
+        if (i % 2 === 0) {
+            // Parzyste zmieniam na wielkie litery i dodaję do tablicy arrOut
+            arrOut.push(arrIn[i].toUpperCase());
+        }
+        else {
+            // Nieparzyste zmieniam na małe litery i dodaję do tablicy arrOut
+            arrOut.push(arrIn[i].toLowerCase());
+        }
     }
-
+    newStr = arrOut.join(""); // Tworzę nowy string po zmianach
+    return newStr;
 }
-mixedUpperCase("kotek ab");
 
-/*
-function mixedUpperCase (str2) {
-    var arrInput = str2.split("");
-    var arrOutput = [];
-    console.log(arrInput);
-
-    for (var b = 0; b < arrInput.length; b += 2) {
-        arrOutput.push(arrInput[b-1]);
-        arrOutput.push(arrInput[b].toUpperCase());
-
-    }
-    console.log(arrOutput);
-    return arrOutput.join("");
-}
-console.log(mixedUpperCase("Kotek ab"));
-//mixedUpperCase("Kotek biega po łące i łapie myszy");
- */
+console.log(mixedUpperCase("PROGRAMOWANIE jest przyJEMNE (0123 !@#$%^)"));
