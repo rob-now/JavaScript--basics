@@ -16,8 +16,7 @@ function mixedUpperCase (str) {
         if (i % 2 === 0) {
             // Parzyste zmieniam na wielkie litery i dodaję do tablicy arrOut
             arrOut.push(arrIn[i].toUpperCase());
-        }
-        else {
+        } else {
             // Nieparzyste zmieniam na małe litery i dodaję do tablicy arrOut
             arrOut.push(arrIn[i].toLowerCase());
         }
