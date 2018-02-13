@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<table id="tabelka">
+    <tr>
+        <td>1</td>2<td class="czerwone">3</td>
+    </tr>
+    <tr>
+        <td>4</td>5<td class="czerwone">6</td>
+    </tr>
+</table>
+<button type="button" class="btn">Click me 1</button>
+<button type="button" class="btn">Click me 2</button>
+<button type="button" class="btn">Click me 3</button>
+<button type="button" class="btn">Click me 4</button>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const tab = document.getElementById("tabelka");
+        const td = document.getElementsByTagName("td");
+        console.log(td.length);
+        for (var i = 0; i < td.length; i++) {
+            td[i].style.backgroundColor = "#ebeaa3";
+        }
+
+        const btn = document.getElementsByClassName("btn");
+        for (var j = 0; j < btn.length; j++) {
+            btn[j].style.color = "#917473";
+            btn[j].style.backgroundColor = "#ffd";
+            btn[j].style.textTransform = "uppercase";
+            btn[j].style.border = "4px solid #03A9F4";
+            btn[j].style.cursor = "pointer";
+            btn[j].addEventListener("click", function (){
+               console.log(this.innerText);
+            });
+        }
+
+    });
+
+</script>
+</body>
+
+</html>
