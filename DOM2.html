@@ -54,9 +54,23 @@
     <li>Element 10</li>
 </ul>
 
+<ul class="li">
+    <li>Element 001</li>
+    <li>Element 002</li>
+    <li>Element 003</li>
+    <li>Element 004</li>
+    <li>Element 005</li>
+    <li>Element 006</li>
+    <li>Element 007</li>
+    <li>Element 008</li>
+    <li>Element 009</li>
+    <li>Element 010</li>
+</ul>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         console.log("Zadanie 2:\n");
+        // Za pomocą odpowiednich metod pobierz pierwszy i ostatni li w liście. W konsoli wyświetl wynik.
         /* Rozwiązanie 1:
         const li = document.querySelectorAll("li");
         console.log(li[0]);
@@ -67,7 +81,25 @@
         console.log(document.querySelector(".list > li:last-of-type"));
 
         console.log("\n\nZadanie 3:\n");
-        
+        // Za pomocą querySelector pobierz trzeci li z listy. Skorzystaj tutaj z odpowiedniego selektora css.
+        console.log(document.querySelector(".list > li:nth-of-type(3)"));
+
+        console.log("\n\nZadanie 5:\n");
+        /*Stwórz nowy dokument z listą .list z 10 elementami.
+
+        Jeżeli używasz edytorów Visual Studio Code, WebStorm lub w innych masz zaisntalowany Emmet,
+        wtedy możesz wpisać ul.list>li{Element $$$}*10 i nacisnąć TAB.
+
+        Za pomocą JS pobierz tą listę, a następnie wszystkie jej li.
+        Wypisz w konsoli za pomocą instrukcji console.dir każde li. Rozwiń je i poszperaj w wypisanych właściwościach.
+        Wyszukaj wśród nich właściwość, która pozwoli ci wypisać w konsoli tekst danego elementu.
+        Wypisz nazwy wszystkich li.
+        */
+        const li2 = document.querySelectorAll(".li > li");
+        for(var i = 0; i < li2.length; i++){
+            console.dir(li2[i]);
+            console.log(li2[i].innerText);
+        }
     });
 </script>
 </body>
