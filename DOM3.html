@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM3</title>
+</head>
+
+<body>
+
+<h2>Title 1</h2>
+
+<ul class="list">
+    <li>Element 01</li>
+    <li>Element 02</li>
+    <li>Element 03</li>
+    <li>Element 04</li>
+    <li>Element 05</li>
+    <li>Element 06</li>
+    <li>Element 07</li>
+    <li>Element 08</li>
+    <li>Element 09</li>
+    <li>Element 10</li>
+</ul>
+
+<h2>Title 2</h2>
+
+<button class="btn">Click me 1</button>
+<button class="btn">Click me 2</button>
+<button class="btn">Click me 3</button>
+<button class="btn">Click me 4</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll("h2, ul.list > li:nth-of-type(2n + 1), button.btn:last-of-type");
+        console.log(elements);
+        for (var i = 0; i < elements.length; i++) {
+            //console.log(elements[i].tagName);
+            elements[i].addEventListener("click", function () {
+                console.log(this.tagName);
+                if (this.tagName.toLowerCase() === "h2") {
+                    this.style.backgroundColor = "#DEF";
+                }
+                if (this.tagName.toLowerCase() === "li") {
+                    var clicked = " - clicked!";
+                    this.innerText += clicked;
+                    this.style.color = "#0a4";
+                }
+                if (this.tagName.toLowerCase() === "button") {
+                    this.style.background = "#AE5";
+                    this.style.textTransform = "uppercase";
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
