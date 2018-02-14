@@ -30,12 +30,14 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // Do stałej elements pobieram wszystkie h2, li w klasie .list w ul i ostatni button o klasie .btn
         const elements = document.querySelectorAll("h2, ul.list > li, button.btn:last-of-type");
-        console.log(elements);
+        // Pętla for do przechodzenia po pobranych elementach
         for (var i = 0; i < elements.length; i++) {
-            //console.log(elements[i].tagName);
+            // Dodaję zdarzenie na kliknięcie pobranych elementów
             elements[i].addEventListener("click", function () {
                 console.log(this.tagName);
+                // Warunki dla poszczególnych tagów, w których nadaję nowe style i zmieniam wewnętrzny tekst HTML
                 if (this.tagName.toLowerCase() === "h2") {
                     this.style.backgroundColor = "#DEF";
                 }
